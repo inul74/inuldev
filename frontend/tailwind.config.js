@@ -11,9 +11,9 @@ export default {
     themes: [
       {
         inuldev: {
-          primary: "#0A66C2", // LinkedIn Blue
+          primary: "#0A66C2", // Inuldev Blue
           secondary: "#FFFFFF", // White
-          accent: "#7FC15E", // LinkedIn Green (for accents)
+          accent: "#7FC15E", // Inuldev Green (for accents)
           neutral: "#000000", // Black (for text)
           "base-100": "#F3F2EF", // Light Gray (background)
           info: "#5E5E5E", // Dark Gray (for secondary text)
