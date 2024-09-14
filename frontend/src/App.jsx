@@ -7,6 +7,7 @@ import Layout from "./components/layout/Layout";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/auth/LoginPage";
 import SignUpPage from "./pages/auth/SignUpPage";
+import NotificationsPage from "./pages/NotificationsPage";
 
 function App() {
   const { data: authUser, isLoading } = useQuery({
@@ -40,6 +41,12 @@ function App() {
         <Route
           path="/login"
           element={!authUser ? <LoginPage /> : <Navigate to={"/"} />}
+        />
+        <Route
+          path="/notifications"
+          element={
+            authUser ? <NotificationsPage /> : <Navigate to={"/login"} />
+          }
         />
       </Routes>
       <Toaster />
