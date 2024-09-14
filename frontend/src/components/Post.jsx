@@ -12,12 +12,12 @@ import {
   Trash2,
 } from "lucide-react";
 
-import { axiosInstance } from "../lib/axios";
-
 import PostAction from "./PostAction";
+import { axiosInstance } from "../lib/axios";
 
 const Post = ({ post }) => {
   const { postId } = useParams();
+  const queryClient = useQueryClient();
 
   const { data: authUser } = useQuery({ queryKey: ["authUser"] });
   const [showComments, setShowComments] = useState(false);
@@ -25,8 +25,6 @@ const Post = ({ post }) => {
   const [comments, setComments] = useState(post.comments || []);
   const isOwner = authUser._id === post.author._id;
   const isLiked = post.likes.includes(authUser._id);
-
-  const queryClient = useQueryClient();
 
   const { mutate: deletePost, isPending: isDeletingPost } = useMutation({
     mutationFn: async () => {
